@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-inherit="res_config_edition" t-inherit-mode="extension">
+        <xpath expr="//div[@class='user-heading']" position="replace">
+            <div class="user-heading">
+                <h3 class="px-0">
+                    Progressive IT Solutions <t t-esc="serverVersion"/>
+                </h3>
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='tab-content']" position="replace">
+            <div class="tab-content">
+                <div role="tabpanel" id="settings" class="tab-pane active text-muted o_web_settings_compact_subtitle">
+                    <small>Copyright © 2024 Progressive IT Solutions</small>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

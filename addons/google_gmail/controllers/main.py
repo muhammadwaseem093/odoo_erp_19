@@ -29,7 +29,7 @@ class GoogleGmailController(http.Controller):
             _logger.warning("Google Gmail: an error occurred %s", error)
             return request.render('google_gmail.google_gmail_oauth_error', {
                 'error': _('An error occurred during the authentication process.'),
-                'redirect_url': '/odoo',
+                'redirect_url': '/PitS',
             })
 
         try:
@@ -135,5 +135,5 @@ class GoogleGmailController(http.Controller):
             or record != request.env.user.outgoing_mail_server_id)
             and request.env.user.has_group('base.group_system')
         ):
-            return f'/odoo/{record._name}/{record.id}'
-        return f'/odoo/my-preferences/{request.env.user.id}'
+            return f'/PitS/{record._name}/{record.id}'
+        return f'/PitS/my-preferences/{request.env.user.id}'

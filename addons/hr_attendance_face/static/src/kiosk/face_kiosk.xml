@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="hr_attendance_face.FaceRecognitionKiosk">
+        <div class="face-kiosk-container">
+            <!-- Initialization Loading -->
+            <div t-if="!state.isInitialized" class="loading-screen">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3">Initializing Face Recognition...</p>
+            </div>
+
+            <!-- Success Screen -->
+            <div t-if="state.recognizedEmployee" class="success-screen">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fa fa-check-circle text-success"/>
+                    </div>
+                    <h2 class="employee-name" t-esc="state.recognizedEmployee.employee_name"/>
+                    <p class="attendance-status">
+                        <t t-if="state.recognizedEmployee.attendance_state === 'checked_in'">
+                            <span class="badge bg-success">Checked In</span>
+                        </t>
+                        <t t-else="">
+                            <span class="badge bg-info">Checked Out</span>
+                        </t>
+                    </p>
+                    <p class="hours-today" t-if="state.recognizedEmployee.hours_today">
+                        Hours Today: <strong t-esc="state.recognizedEmployee.hours_today"/>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Camera/Recognition Screen -->
+            <div t-if="state.isInitialized and !state.recognizedEmployee and !state.showPinFallback" 
+                 class="camera-screen">
+                <div class="camera-container">
+                    <video id="face-kiosk-video" 
+                           autoplay="true" 
+                           playsinline="true"
+                           class="kiosk-video"/>
+                    
+                    <div class="face-detection-overlay" t-att-class="{ 'face-detected': state.faceDetected }">
+                        <div class="face-guide"/>
+                    </div>
+
+                    <div class="status-indicator">
+                        <span t-if="state.isProcessing" class="badge bg-primary">
+                            <i class="fa fa-spinner fa-spin"/> Processing...
+                        </span>
+                        <span t-elif="state.faceDetected" class="badge bg-success">
+                            <i class="fa fa-check"/> Face Detected
+                        </span>
+                        <span t-else="" class="badge bg-warning">
+                            <i class="fa fa-user"/> Position your face
+                        </span>
+                    </div>
+                </div>
+
+                <div class="kiosk-actions mt-4">
+                    <button t-on-click="manualCapture" 
+                            class="btn btn-primary btn-lg"
+                            t-att-disabled="state.isProcessing or !state.faceDetected">
+                        <i class="fa fa-camera"/> Check In/Out
+                    </button>
+                    
+                    <button t-if="state.settings and state.settings.fallback_pin"
+                            t-on-click="switchToPinMode" 
+                            class="btn btn-secondary btn-lg ms-3">
+                        <i class="fa fa-keyboard-o"/> Use PIN
+                    </button>
+                </div>
+
+                <div t-if="state.errorMessage" class="alert alert-danger mt-3">
+                    <t t-esc="state.errorMessage"/>
+                </div>
+            </div>
+
+            <!-- PIN Fallback Screen -->
+            <div t-if="state.showPinFallback" class="pin-fallback-screen">
+                <div class="text-center">
+                    <h3>Enter PIN</h3>
+                    <p class="text-muted">Face recognition unavailable. Please use your PIN.</p>
+                    <!-- PIN input will be handled by existing attendance kiosk -->
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

@@ -8,22 +8,50 @@ _build/
 !.github
 !.mailmap
 !.weblate.json
+
+# Database and Config files (SENSITIVE - DO NOT COMMIT)
+odoo.conf
+odoo_dev.log
+*.log
+*.log.*
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# Filestore and sessions
+odoo/filestore
+filestore/
+sessions/
+.sessions/
+
+# Local data
+*.sqlite
+*.db
+*.dump
+*.sql
+
 # compiled python files
 *.py[co]
 __pycache__/
+
 # setup.py egg_info
 *.egg-info
+
 # emacs backup files
 *~
+
 # hg stuff
 *.orig
 status
-# odoo filestore
-odoo/filestore
+
 # maintenance migration scripts
 odoo/addons/base/maintenance
+
 # windows installation config file
-/odoo.conf
+# /odoo.conf  # Already excluded above
 
 # generated for windows installer?
 install/win32/*.bat
@@ -51,3 +79,19 @@ package.json
 /man/
 /share/
 /src/
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.backup

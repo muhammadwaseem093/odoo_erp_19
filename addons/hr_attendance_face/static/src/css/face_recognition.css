@@ -1,0 +1,157 @@
+/* Face Recognition Styles */
+
+.face-enrollment-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Wizard webcam container styles */
+#webcam-container {
+    background: #1a1a2e;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#webcam-container video {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#webcam-container img {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#camera-status {
+    margin-top: 10px;
+}
+
+#camera-status .badge {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.video-container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    margin: 0 auto;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.webcam-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); /* Mirror effect */
+}
+
+.face-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f44336;
+    animation: pulse 1.5s infinite;
+    transition: background 0.3s ease;
+}
+
+.face-indicator.face-detected {
+    background: #4caf50;
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(244, 67, 54, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(244, 67, 54, 0);
+    }
+}
+
+.face-guide-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 260px;
+    border: 3px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.face-guide-overlay::after {
+    content: 'Position face here';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.captured-image {
+    max-width: 640px;
+    max-height: 480px;
+    transform: scaleX(-1); /* Mirror effect */
+}
+
+.face-status {
+    min-height: 30px;
+}
+
+/* Employee Face Badge */
+.employee-face-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 8px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 12px;
+    font-size: 11px;
+}
+
+.employee-face-badge.not-enrolled {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+/* Face Images Gallery */
+.face-images-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.face-image-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+
+.face-image-item.primary {
+    border-color: #4caf50;
+}
+
+.face-image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

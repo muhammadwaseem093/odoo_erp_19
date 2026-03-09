@@ -1,0 +1,225 @@
+/* Face Recognition Kiosk Styles */
+
+.face-kiosk-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Loading Screen */
+.loading-screen {
+    text-align: center;
+}
+
+.loading-screen .spinner-border {
+    width: 4rem;
+    height: 4rem;
+}
+
+.loading-screen p {
+    font-size: 1.25rem;
+    color: #a0aec0;
+}
+
+/* Camera Screen */
+.camera-screen {
+    text-align: center;
+}
+
+.camera-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.kiosk-video {
+    width: 640px;
+    height: 480px;
+    object-fit: cover;
+    transform: scaleX(-1);
+    background: #2d3748;
+}
+
+/* Face Detection Overlay */
+.face-detection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.face-guide {
+    width: 280px;
+    height: 350px;
+    border: 3px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50% 50% 45% 45%;
+    transition: all 0.3s ease;
+}
+
+.face-detection-overlay.face-detected .face-guide {
+    border-color: #48bb78;
+    border-style: solid;
+    box-shadow: 0 0 20px rgba(72, 187, 120, 0.5);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(72, 187, 120, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(72, 187, 120, 0.6);
+    }
+}
+
+/* Status Indicator */
+.status-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.status-indicator .badge {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* Kiosk Actions */
+.kiosk-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.kiosk-actions .btn {
+    padding: 15px 40px;
+    font-size: 1.25rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.kiosk-actions .btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.kiosk-actions .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Success Screen */
+.success-screen {
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.success-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 60px 100px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.success-icon {
+    margin-bottom: 30px;
+}
+
+.success-icon .fa {
+    font-size: 6rem;
+    animation: checkmark 0.5s ease-in-out;
+}
+
+@keyframes checkmark {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.employee-name {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.attendance-status .badge {
+    font-size: 1.25rem;
+    padding: 10px 25px;
+    border-radius: 20px;
+}
+
+.hours-today {
+    font-size: 1.25rem;
+    color: #a0aec0;
+    margin-top: 20px;
+}
+
+/* PIN Fallback Screen */
+.pin-fallback-screen {
+    text-align: center;
+    padding: 40px;
+}
+
+.pin-fallback-screen h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Error Message */
+.alert-danger {
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .kiosk-video {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+
+    .face-guide {
+        width: 200px;
+        height: 250px;
+    }
+
+    .success-content {
+        padding: 40px 50px;
+    }
+
+    .employee-name {
+        font-size: 2rem;
+    }
+
+    .kiosk-actions {
+        flex-direction: column;
+    }
+}
+
+/* Dark mode adjustments for embedded kiosk */
+.o_dark .face-kiosk-container {
+    background: linear-gradient(135deg, #0d0d14 0%, #0a101f 100%);
+}

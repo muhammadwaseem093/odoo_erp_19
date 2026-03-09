@@ -1811,7 +1811,7 @@ class Website(models.Model):
             action_params["enable_editor"] = 1
         if mode_debug:
             action_params["debug"] = mode_debug
-        return "/odoo/action-website.website_preview?" + urls.url_encode(action_params)
+        return "/PitS/action-website.website_preview?" + urls.url_encode(action_params)
 
     def get_client_action(self, url, mode_edit=False, website_id=False):
         action = self.env["ir.actions.actions"]._for_xml_id("website.website_preview")

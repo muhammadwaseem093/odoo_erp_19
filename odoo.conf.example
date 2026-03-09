@@ -1,0 +1,32 @@
+[options]
+; Admin password for database management
+admin_passwd = YOUR_ADMIN_PASSWORD
+
+; Database connection settings
+db_host = YOUR_DB_HOST
+db_port = 5432
+db_user = YOUR_DB_USER
+db_password = YOUR_DB_PASSWORD
+
+; Addons path - update to your local path
+addons_path = /path/to/odoo_erp_19/addons
+
+; Log file
+logfile = odoo_dev.log
+
+; HTTP port
+xmlrpc_port = 8069
+
+; Database filter (optional)
+; dbfilter = ^your_database$
+
+; Workers for production (0 for development)
+; workers = 0
+
+; Limit memory for workers (production)
+; limit_memory_hard = 2684354560
+; limit_memory_soft = 2147483648
+
+; Limit time for requests (production)
+; limit_time_cpu = 600
+; limit_time_real = 1200

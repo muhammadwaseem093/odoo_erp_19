@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- Theme Toggle Button Template -->
+    <t t-name="custom_branding.ThemeToggle">
+        <div class="o_navbar_item d-flex align-items-center px-2 o_theme_toggle_container" 
+             t-on-click="toggleTheme" 
+             t-att-title="tooltipText"
+             role="button"
+             style="cursor: pointer;">
+            <i t-att-class="iconClass + ' fa-lg'" role="img" t-att-aria-label="tooltipText"/>
+        </div>
+    </t>
+
+</templates>

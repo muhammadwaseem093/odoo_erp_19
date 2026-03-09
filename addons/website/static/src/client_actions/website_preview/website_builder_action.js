@@ -766,13 +766,13 @@ function isTopWindowURL({ host, pathname }) {
 registry
     .category("isTopWindowURL")
     .add("html_builder.website_builder_action", ({ host, pathname }) => {
-        const backendRoutes = ["/web", "/web/session/logout", "/odoo"];
+        const backendRoutes = ["/web", "/web/session/logout", "/PitS"];
         return (
             host !== window.location.host ||
             (pathname &&
                 (backendRoutes.includes(pathname) ||
                     pathname.startsWith("/@/") ||
-                    pathname.startsWith("/odoo/") ||
+                    pathname.startsWith("/PitS/") ||
                     pathname.startsWith("/web/content/") ||
                     pathname.startsWith("/document/share/")))
         );

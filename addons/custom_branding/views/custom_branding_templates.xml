@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============================================ -->
+    <!-- Progressive IT Solutions - Branding Templates -->
+    <!-- ============================================ -->
+
+    <!-- Override Base Layout Title and Favicon -->
+    <template id="progressive_layout_title" inherit_id="web.layout">
+        <xpath expr="//title" position="replace">
+            <title t-esc="title or 'Progressive IT Solutions'"/>
+        </xpath>
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+            <link type="image/x-icon" rel="shortcut icon" href="/custom_branding/static/src/img/favicon.ico"/>
+        </xpath>
+    </template>
+
+    <!-- Set title for webclient (backend) -->
+    <template id="progressive_webclient_title" inherit_id="web.webclient_bootstrap">
+        <xpath expr="//t[@t-call='web.layout']" position="before">
+            <t t-set="title">Progressive IT Solutions</t>
+        </xpath>
+    </template>
+
+    <!-- Login Page Title -->
+    <template id="progressive_login_title" inherit_id="web.login">
+        <xpath expr="//t[@t-call='web.login_layout']" position="before">
+            <t t-set="title">Login | Progressive IT Solutions</t>
+        </xpath>
+    </template>
+
+    <!-- Login Layout - Replace Logo and Footer -->
+    <template id="progressive_login_layout" inherit_id="web.login_layout">
+        <!-- Replace logo image -->
+        <xpath expr="//div[hasclass('text-center','pb-3')]/img" position="replace">
+            <img src="/custom_branding/static/src/img/logo.png" alt="Progressive IT Solutions" style="max-height:120px; max-width: 100%; width:auto"/>
+        </xpath>
+        <!-- Replace Powered by Odoo footer -->
+        <xpath expr="//a[contains(@href,'odoo.com')]" position="replace">
+            <a href="https://www.progressiveitsolutions.com" target="_blank">Powered by <span>Progressive IT Solutions</span></a>
+        </xpath>
+    </template>
+
+    <!-- Override Brand Promotion Message (Footer) -->
+    <template id="progressive_brand_promotion" inherit_id="web.brand_promotion_message">
+        <xpath expr="//t[@t-set='odoo_logo']" position="replace">
+            <t t-set="odoo_logo">
+                <a target="_blank" href="https://www.progressiveitsolutions.com" class="badge text-bg-light">
+                    <img alt="Progressive IT Solutions" src="/custom_branding/static/src/img/logo.png" 
+                         style="width: auto; height: 1em; vertical-align: baseline;"/>
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Override Frontend Layout -->
+    <template id="progressive_frontend_layout" inherit_id="web.frontend_layout">
+        <xpath expr="//t[@t-call='web.brand_promotion']" position="replace">
+            <div class="o_brand_promotion text-center small py-2">
+                <span>Powered by <a href="https://www.progressiveitsolutions.com" target="_blank">Progressive IT Solutions</a></span>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,340 @@
+/* ============================================ */
+/* Progressive IT Solutions - Dark Mode Theme   */
+/* ============================================ */
+
+/* Dark mode CSS variables */
+html[data-theme="dark"] {
+    --progressive-primary: #1a5a8a;
+    --progressive-primary-light: #2a7ab0;
+    --progressive-primary-dark: #0A3D62;
+    --progressive-secondary: #2d2d2d;
+    --progressive-accent: #3498db;
+    
+    /* Dark mode background colors */
+    --dark-bg-primary: #1a1a2e;
+    --dark-bg-secondary: #16213e;
+    --dark-bg-tertiary: #0f0f1a;
+    --dark-bg-card: #1f1f3a;
+    
+    /* Dark mode text colors */
+    --dark-text-primary: #e8e8e8;
+    --dark-text-secondary: #b0b0b0;
+    --dark-text-muted: #808080;
+    
+    /* Dark mode borders */
+    --dark-border-color: #3a3a5a;
+}
+
+/* Apply dark mode styles */
+html[data-theme="dark"] body,
+html[data-theme="dark"] .o_web_client {
+    background-color: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+/* Main content area */
+html[data-theme="dark"] .o_action_manager,
+html[data-theme="dark"] .o_content {
+    background-color: var(--dark-bg-primary) !important;
+}
+
+/* Navbar */
+html[data-theme="dark"] .o_main_navbar {
+    background-color: var(--dark-bg-tertiary) !important;
+    border-bottom: 1px solid var(--dark-border-color) !important;
+}
+
+/* Sidebar / Menu */
+html[data-theme="dark"] .o_menu_sections,
+html[data-theme="dark"] .o_app_switcher {
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+/* Cards and Panels */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .o_form_sheet,
+html[data-theme="dark"] .o_list_view,
+html[data-theme="dark"] .o_kanban_view {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+/* Form views */
+html[data-theme="dark"] .o_form_view {
+    background-color: var(--dark-bg-primary) !important;
+}
+
+html[data-theme="dark"] .o_form_sheet_bg {
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+/* List views */
+html[data-theme="dark"] .o_list_table {
+    background-color: var(--dark-bg-card) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+html[data-theme="dark"] .o_list_table thead th {
+    background-color: var(--dark-bg-tertiary) !important;
+    color: var(--dark-text-primary) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+html[data-theme="dark"] .o_list_table tbody tr {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+html[data-theme="dark"] .o_list_table tbody tr:hover {
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+html[data-theme="dark"] .o_list_table td {
+    border-color: var(--dark-border-color) !important;
+}
+
+/* Kanban views */
+html[data-theme="dark"] .o_kanban_record {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+html[data-theme="dark"] .o_kanban_group_header {
+    background-color: var(--dark-bg-tertiary) !important;
+}
+
+/* Modals and Dialogs */
+html[data-theme="dark"] .modal-content {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+html[data-theme="dark"] .modal-header,
+html[data-theme="dark"] .modal-footer {
+    border-color: var(--dark-border-color) !important;
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+/* Dropdowns */
+html[data-theme="dark"] .dropdown-menu {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+html[data-theme="dark"] .dropdown-item {
+    color: var(--dark-text-primary) !important;
+}
+
+html[data-theme="dark"] .dropdown-item:hover {
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+/* Inputs and Form controls */
+html[data-theme="dark"] .form-control,
+html[data-theme="dark"] .o_input,
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+    background-color: var(--dark-bg-secondary) !important;
+    border-color: var(--dark-border-color) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+html[data-theme="dark"] .form-control:focus,
+html[data-theme="dark"] .o_input:focus {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--progressive-accent) !important;
+}
+
+/* Buttons */
+html[data-theme="dark"] .btn-secondary {
+    background-color: var(--dark-bg-secondary) !important;
+    border-color: var(--dark-border-color) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+html[data-theme="dark"] .btn-light {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+/* Status bar */
+html[data-theme="dark"] .o_statusbar_status {
+    background-color: transparent !important;
+}
+
+/* Chatter */
+html[data-theme="dark"] .o_chatter,
+html[data-theme="dark"] .o_chatter_topbar {
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+html[data-theme="dark"] .o_mail_thread {
+    background-color: var(--dark-bg-primary) !important;
+}
+
+html[data-theme="dark"] .o_mail_message {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+/* Discuss / Mail */
+html[data-theme="dark"] .o_mail_discuss_container {
+    background-color: var(--dark-bg-primary) !important;
+}
+
+html[data-theme="dark"] .o_mail_discuss_sidebar {
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+/* Search panel */
+html[data-theme="dark"] .o_search_panel {
+    background-color: var(--dark-bg-secondary) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+/* Control panel */
+html[data-theme="dark"] .o_control_panel {
+    background-color: var(--dark-bg-secondary) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+/* Breadcrumb */
+html[data-theme="dark"] .breadcrumb {
+    background-color: transparent !important;
+}
+
+html[data-theme="dark"] .breadcrumb-item a {
+    color: var(--progressive-accent) !important;
+}
+
+/* Settings page */
+html[data-theme="dark"] .o_settings_container {
+    background-color: var(--dark-bg-primary) !important;
+}
+
+html[data-theme="dark"] .o_setting_box {
+    background-color: var(--dark-bg-card) !important;
+}
+
+/* Tables */
+html[data-theme="dark"] table {
+    color: var(--dark-text-primary) !important;
+}
+
+html[data-theme="dark"] th,
+html[data-theme="dark"] td {
+    border-color: var(--dark-border-color) !important;
+}
+
+/* Scrollbars in dark mode */
+html[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--dark-bg-secondary);
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--dark-border-color);
+}
+
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--progressive-accent);
+}
+
+/* Apps grid */
+html[data-theme="dark"] .o_apps {
+    background-color: var(--dark-bg-primary) !important;
+}
+
+html[data-theme="dark"] .o_app {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+html[data-theme="dark"] .o_app:hover {
+    background-color: var(--dark-bg-secondary) !important;
+}
+
+/* Calendar */
+html[data-theme="dark"] .o_calendar_container {
+    background-color: var(--dark-bg-primary) !important;
+}
+
+html[data-theme="dark"] .fc-theme-standard td,
+html[data-theme="dark"] .fc-theme-standard th {
+    border-color: var(--dark-border-color) !important;
+}
+
+/* Pivot / Graph views */
+html[data-theme="dark"] .o_pivot,
+html[data-theme="dark"] .o_graph_renderer {
+    background-color: var(--dark-bg-primary) !important;
+}
+
+/* Links */
+html[data-theme="dark"] a:not(.btn) {
+    color: var(--progressive-accent) !important;
+}
+
+/* Labels */
+html[data-theme="dark"] label,
+html[data-theme="dark"] .o_form_label {
+    color: var(--dark-text-secondary) !important;
+}
+
+/* Tooltips */
+html[data-theme="dark"] .tooltip-inner {
+    background-color: var(--dark-bg-tertiary) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+/* Popovers */
+html[data-theme="dark"] .popover {
+    background-color: var(--dark-bg-card) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+html[data-theme="dark"] .popover-body {
+    color: var(--dark-text-primary) !important;
+}
+
+/* ============================================ */
+/* Theme Toggle Button Styles                   */
+/* ============================================ */
+
+.o_theme_toggle_container {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.o_theme_toggle_container:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.o_theme_toggle_container i {
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.o_theme_toggle_container:hover i {
+    transform: scale(1.15);
+}
+
+/* Sun icon for dark mode (to switch to light) */
+.o_theme_toggle_container .fa-sun-o {
+    color: #ffd700 !important;
+}
+
+/* Moon icon for light mode (to switch to dark) */
+.o_theme_toggle_container .fa-moon-o {
+    color: #b8c5d6 !important;
+}
+
+/* Dark mode - toggle container */
+html[data-theme="dark"] .o_theme_toggle_container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

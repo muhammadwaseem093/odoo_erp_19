@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Extend Attendance Settings -->
+    <record id="res_config_settings_view_form_face" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.face.recognition</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority">90</field>
+        <field name="inherit_id" ref="hr_attendance.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='overtime_settings']" position="after">
+                <!-- Attendance Modes Block -->
+                <block title="Attendance Modes" name="attendance_modes_settings">
+                    <setting id="attendance_mode_manual"
+                             string="Manual Attendance"
+                             help="Allow employees to check-in/check-out manually via button click">
+                        <field name="attendance_mode_manual"/>
+                    </setting>
+                    <setting id="attendance_mode_face_recognition"
+                             string="Face Recognition"
+                             help="Allow employees to check-in/check-out using face recognition">
+                        <field name="attendance_mode_face_recognition"/>
+                    </setting>
+                    <setting id="attendance_mode_biometric"
+                             string="Biometric (Fingerprint/RFID)"
+                             help="Allow employees to check-in/check-out using biometric devices">
+                        <field name="attendance_mode_biometric"/>
+                    </setting>
+                    <setting id="attendance_mode_pin"
+                             string="PIN Code"
+                             help="Allow employees to check-in/check-out using a PIN code">
+                        <field name="attendance_mode_pin"/>
+                    </setting>
+                    <setting id="attendance_mode_qr_code"
+                             string="QR Code Scan"
+                             help="Allow employees to check-in/check-out by scanning QR code">
+                        <field name="attendance_mode_qr_code"/>
+                    </setting>
+                </block>
+
+                <!-- Face Recognition Settings Block -->
+                <block title="Face Recognition Settings" name="face_recognition_settings">
+                    <setting id="face_recognition_enabled" 
+                             string="Enable Face Recognition"
+                             help="Use face recognition for employee attendance">
+                        <field name="face_recognition_enabled"/>
+                    </setting>
+                    <setting id="face_recognition_model"
+                             string="Recognition Model"
+                             invisible="not face_recognition_enabled"
+                             help="Deep learning model for face recognition">
+                        <field name="face_recognition_model"/>
+                    </setting>
+                    <setting id="face_detector_backend"
+                             string="Face Detector"
+                             invisible="not face_recognition_enabled"
+                             help="Backend for face detection">
+                        <field name="face_detector_backend"/>
+                    </setting>
+                    <setting id="face_recognition_threshold"
+                             string="Recognition Threshold"
+                             invisible="not face_recognition_enabled"
+                             help="Minimum similarity score (0-1) for face verification">
+                        <field name="face_recognition_threshold"/>
+                    </setting>
+                    <setting id="face_liveness_detection"
+                             string="Liveness Detection"
+                             invisible="not face_recognition_enabled"
+                             help="Enable anti-spoofing with liveness detection">
+                        <field name="face_liveness_detection"/>
+                    </setting>
+                    <setting id="face_recognition_fallback_pin"
+                             string="PIN Fallback"
+                             invisible="not face_recognition_enabled"
+                             help="Allow PIN entry if face recognition fails">
+                        <field name="face_recognition_fallback_pin"/>
+                    </setting>
+                    <setting id="face_capture_settings"
+                             string="Capture Settings"
+                             invisible="not face_recognition_enabled">
+                        <div class="content-group">
+                            <div class="row mt-2">
+                                <label for="face_capture_quality" class="col-lg-4 o_light_label"/>
+                                <field name="face_capture_quality"/>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="face_kiosk_camera_index" class="col-lg-4 o_light_label"/>
+                                <field name="face_kiosk_camera_index"/>
+                            </div>
+                            <div class="row mt-2">
+                                <label for="face_auto_capture" class="col-lg-4 o_light_label"/>
+                                <field name="face_auto_capture"/>
+                            </div>
+                            <div class="row mt-2" invisible="not face_auto_capture">
+                                <label for="face_auto_capture_delay" class="col-lg-4 o_light_label"/>
+                                <field name="face_auto_capture_delay"/>
+                                <span class="ms-2">milliseconds</span>
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add menu under Employees Configuration -->
+    <menuitem id="menu_face_attendance_settings"
+        name="Attendance Mode Settings"
+        parent="hr.menu_human_resources_configuration"
+        action="hr_attendance.action_hr_attendance_settings"
+        sequence="50"
+        groups="hr_attendance.group_hr_attendance_manager"/>
+
+</odoo>

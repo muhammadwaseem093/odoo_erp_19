@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Face Recognition Kiosk Template -->
+    <template id="face_kiosk_assets" inherit_id="hr_attendance.public_kiosk_mode">
+        <xpath expr="//t[@t-call='web.layout']" position="before">
+            <t t-set="face_recognition_enabled" t-value="request.env.company.face_recognition_enabled"/>
+        </xpath>
+    </template>
+
+</odoo>

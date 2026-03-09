@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_face_image_hr_user,hr.employee.face.image hr user,model_hr_employee_face_image,hr.group_hr_user,1,1,1,1
+access_hr_employee_face_image_officer,hr.employee.face.image officer,model_hr_employee_face_image,hr_attendance.group_hr_attendance_officer,1,1,1,1
+access_hr_employee_face_enrollment_wizard,hr.employee.face.enrollment.wizard,model_hr_employee_face_enrollment_wizard,hr.group_hr_user,1,1,1,1

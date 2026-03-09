@@ -1,0 +1,170 @@
+/* ============================================ */
+/* Progressive IT Solutions - Custom Branding   */
+/* ============================================ */
+
+/* Brand Colors - Progressive IT Solutions */
+:root {
+    --progressive-primary: #0A3D62;
+    --progressive-primary-light: #1a5a8a;
+    --progressive-primary-dark: #072d49;
+    --progressive-secondary: #1B1B1B;
+    --progressive-accent: #3498db;
+    --progressive-success: #27ae60;
+}
+
+/* Backend navbar */
+.navbar,
+.o_main_navbar {
+    background-color: var(--progressive-primary) !important;
+}
+
+/* ============================================ */
+/* Company Logo in Navbar                       */
+/* ============================================ */
+
+/* Add company logo before the apps icon */
+.o_main_navbar .o_menu_toggle::before {
+    content: '';
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+    background-image: url('/custom_branding/static/src/img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Sidebar menu */
+.o_main_navbar .o_menu_sections {
+    background-color: var(--progressive-secondary) !important;
+}
+
+.o_menu_section:hover {
+    background-color: var(--progressive-primary-light) !important;
+}
+
+/* Footer - Hide Odoo branding */
+.o_footer {
+    background-color: var(--progressive-secondary) !important;
+    color: #ffffff !important;
+    font-size: 12px;
+}
+
+.o_footer .oe_powered_by,
+.o_footer a[href*="odoo.com"],
+a.o_brand_promotion[href*="odoo.com"] {
+    display: none !important;
+}
+
+/* Hide ALL Odoo external links and logos */
+a[href*="odoo.com/documentation"],
+a[href*="odoo.com/help"],
+a[href*="odoo.com/forum"],
+a[href*="odoo.com?utm"],
+img[src*="odoo_logo"],
+img[alt="Odoo"],
+img[alt="odoo"] {
+    display: none !important;
+}
+
+/* Hide Odoo powered by text */
+.o_brand_promotion a[href*="odoo.com"],
+.badge a[href*="odoo.com"] {
+    display: none !important;
+}
+
+/* Replace "Powered by Odoo" text */
+.o_brand_promotion::after {
+    content: "Powered by Progressive IT Solutions";
+}
+
+/* Login Page Styling */
+.oe_login_form,
+.login .login_form {
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.oe_login_buttons .btn-primary {
+    background-color: var(--progressive-primary) !important;
+    border-color: var(--progressive-primary) !important;
+}
+
+.oe_login_buttons .btn-primary:hover {
+    background-color: var(--progressive-primary-dark) !important;
+}
+
+/* Login input fields */
+.login .o_form_input,
+.oe_login_form input {
+    border-color: var(--progressive-primary) !important;
+}
+
+.oe_login_form input:focus {
+    border-color: var(--progressive-accent) !important;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3) !important;
+}
+
+/* Primary buttons */
+.btn-primary {
+    background-color: var(--progressive-primary) !important;
+    border-color: var(--progressive-primary) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--progressive-primary-dark) !important;
+    border-color: var(--progressive-primary-dark) !important;
+}
+
+/* Links */
+a {
+    color: var(--progressive-primary);
+}
+
+a:hover {
+    color: var(--progressive-primary-dark);
+}
+
+/* Logo sizing */
+.o_logo img,
+img.o_logo {
+    max-height: 40px !important;
+    width: auto !important;
+}
+
+/* Hide Odoo logo completely if it still appears */
+img[src*="odoo"],
+img[alt*="Odoo"] {
+    visibility: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--progressive-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--progressive-primary-dark);
+}
+
+/* Loading screen */
+.o_loading {
+    background-color: var(--progressive-primary) !important;
+}
+
+/* App icons background */
+.o_app .o_icon {
+    background-color: var(--progressive-primary) !important;
+}

@@ -10,7 +10,7 @@ class Web_TourTour(models.Model):
 
     name = fields.Char(required=True)
     step_ids = fields.One2many("web_tour.tour.step", "tour_id")
-    url = fields.Char(string="Starting URL", default="/odoo")
+    url = fields.Char(string="Starting URL", default="/PitS")
     sharing_url = fields.Char(compute="_compute_sharing_url", string="Sharing URL")
     rainbow_man_message = fields.Html(default="<b>Good job!</b> You went through all steps of this tour.", translate=True)
     sequence = fields.Integer(default=1000)
